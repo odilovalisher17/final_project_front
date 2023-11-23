@@ -1,0 +1,16 @@
+.item-page-body-img {
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.item-page-body-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.item-page-body-author,
+.item-page-body-collection,
+.item-page-body-properties {
+  font-size: 22px;
+}

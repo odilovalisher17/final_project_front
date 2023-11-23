@@ -1,0 +1,11 @@
+.collection-page-properties-header {
+  font-size: 20px;
+  font-weight: 450;
+}
+
+.collection-page-properties-table button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}

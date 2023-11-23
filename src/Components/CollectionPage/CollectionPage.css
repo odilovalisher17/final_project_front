@@ -1,0 +1,82 @@
+.collection-page {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.collection-page input,
+.collection-page textarea {
+  padding: 5px 10px;
+  font-size: 19px;
+  border-radius: 5px;
+  background-color: #8ca6db;
+  border: 1px grey solid;
+}
+
+.collection-page-card {
+  padding: 1rem;
+  border-radius: 10px;
+
+  background: #b993d6;
+  background: -webkit-linear-gradient(
+    to right,
+    #8ca6db,
+    #b993d6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(140, 166, 219),
+    rgb(185, 147, 214)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.collection-page-update-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection-page-update-btns button {
+  width: 49%;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.collection-page-update-btns button span {
+  margin-left: 5px;
+}
+
+.collection-page-update-btns button:first-child {
+  background-color: rgb(143, 255, 143);
+}
+
+.collection-page-update-btns button:last-child {
+  background-color: rgb(255, 139, 139);
+}
+
+.collection-page-edit-mode-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.collection-page-edit-mode-btns div {
+  width: 49%;
+}
+
+.collection-page-edit-mode-btns button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: antiquewhite;
+}
+
+.collection-page-edit-mode-btns div:first-child button {
+  background-color: rgb(200, 0, 0);
+}
+
+.collection-page-edit-mode-btns div:last-child button {
+  background-color: rgb(0, 79, 0);
+}

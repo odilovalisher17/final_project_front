@@ -1,0 +1,48 @@
+.item-page-comments {
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: gainsboro;
+  padding: 1rem;
+}
+
+.itam-page-comments-header {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.item-page-comments-add-comment {
+  margin-bottom: 10px;
+}
+
+.item-page-comments-add-comment input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.item-page-comments-add-comment button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: cadetblue;
+  color: antiquewhite;
+}
+
+.item-page-comments-field {
+  border-top: 1px solid grey;
+}
+
+.item-page-comments-author span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.item-page-comments-author small {
+  margin-left: 10px;
+}
+
+.item-page-comments-text {
+  padding-left: 1rem;
+}

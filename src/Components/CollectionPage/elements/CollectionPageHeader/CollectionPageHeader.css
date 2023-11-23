@@ -1,0 +1,12 @@
+.collection-page-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.collection-page-header button {
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
+}

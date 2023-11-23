@@ -1,0 +1,26 @@
+.items {
+  margin-top: 0.7rem;
+  padding-bottom: 1rem;
+  padding-right: 5px;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.items::-webkit-scrollbar {
+  width: 10px;
+}
+
+.items::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgba(60, 60, 60, 0.1);
+}
+
+.items::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: linear-gradient(
+    to bottom,
+    rgb(140, 166, 219),
+    rgb(185, 147, 214)
+  );
+}

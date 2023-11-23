@@ -1,0 +1,134 @@
+.one-item {
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  padding: 0.5rem 0.7rem;
+  background: #b993d6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8ca6db,
+    #b993d6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(140, 166, 219),
+    rgb(185, 147, 214)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.one-item-top {
+}
+
+.one-item-not-found-img,
+.one-item-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  margin-right: 1rem;
+  object-fit: fill;
+}
+
+/* ////////////////////\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.one-item-name {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.one-item-tags {
+  padding-bottom: 1rem;
+  max-width: 100%;
+}
+
+.one-item-tags span {
+  padding-right: 10px;
+  color: rgb(31, 224, 31);
+  font-weight: 650;
+  display: inline-block;
+}
+
+/* ///////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\ */
+.one-item-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid grey;
+}
+
+.one-item-footer-likes,
+.one-item-footer-comments,
+.one-item-footer-views {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.one-item-footer-likes span,
+.one-item-footer-comments span,
+.one-item-footer-views span {
+  color: rgb(17, 17, 17);
+  font-weight: 700;
+  transition: all 0.1s;
+}
+
+.likes-hover-effect,
+.comments-hover-effect,
+.views-hover-effect {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one-item-footer-likes:hover > span,
+.one-item-footer-likes:hover > .likes-hover-effect svg {
+  color: rgb(249, 24, 128) !important;
+}
+
+.one-item-footer-likes:hover > .likes-hover-effect {
+  box-shadow: inset 0 0 30px rgba(249, 24, 128, 0.2);
+}
+
+.one-item-footer-comments:hover > span,
+.one-item-footer-comments:hover > .comments-hover-effect svg {
+  color: rgb(29, 155, 240) !important;
+}
+
+.one-item-footer-comments:hover > .comments-hover-effect {
+  box-shadow: inset 0 0 30px rgba(29, 155, 240, 0.2);
+}
+
+.one-item-footer-views:hover > span,
+.one-item-footer-views:hover > .views-hover-effect svg {
+  color: rgb(0, 186, 124) !important;
+}
+
+.one-item-footer-views:hover > .views-hover-effect {
+  box-shadow: inset 0 0 30px rgba(0, 186, 124, 0.2);
+}
+
+@media screen and (max-width: 576px) {
+  .one-item-not-found-img,
+  .one-item-img {
+    height: 25vh;
+    width: 100%;
+    border-radius: 10px;
+    margin-right: 1rem;
+    object-fit: fill;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .one-item-not-found-img,
+  .one-item-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    margin-right: 1rem;
+    object-fit: fill;
+  }
+}

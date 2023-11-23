@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h4,
+h5 {
+  margin-bottom: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.bg-light-mode {
+  background: #e9ebee;
+}
+
+.bg-dark-mode {
+  background: rgb(19, 19, 19);
+}
+
+.bg-blue {
+  background: #00b4ff !important;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .container {
+    max-width: 100% !important;
+  }
+}

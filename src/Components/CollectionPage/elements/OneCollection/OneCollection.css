@@ -1,0 +1,27 @@
+.collection-page-one-collection {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.one-collection-left {
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.one-collection-left img {
+  border-radius: 10px;
+}
+
+.one-collection-item-update button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.one-collection-delete-item-btn {
+  background-color: rgb(253, 131, 131);
+}

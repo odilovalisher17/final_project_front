@@ -1,0 +1,24 @@
+.collection-page-body {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.collection-page-body-img {
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.collection-page-body-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.collection-page-body-author,
+.collection-page-body-topic,
+.collection-page-body-description,
+.collection-page-body-total {
+  font-size: 22px;
+  font-weight: 500;
+}

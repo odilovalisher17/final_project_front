@@ -1,0 +1,52 @@
+.item-page {
+  min-height: 90vh;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.item-page-card {
+  background: #b993d6;
+  background: -webkit-linear-gradient(
+    to right,
+    #8ca6db,
+    #b993d6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(140, 166, 219),
+    rgb(185, 147, 214)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.item-page-card input {
+  padding: 5px 10px;
+  font-size: 19px;
+  border-radius: 5px;
+  background-color: #8ca6db;
+  border: 1px grey solid;
+}
+
+.item-page-edit-mode-btns {
+  padding-top: 10px;
+}
+
+.item-page-edit-mode-btns button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: antiquewhite;
+}
+
+.item-page-edit-mode-btns div:first-child button {
+  background-color: rgb(200, 0, 0);
+}
+
+.item-page-edit-mode-btns div:last-child button {
+  background-color: rgb(0, 79, 0);
+}

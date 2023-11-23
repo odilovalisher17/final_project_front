@@ -1,0 +1,59 @@
+.collections {
+  margin: 0.7rem 0;
+  height: calc(100vh - 100px);
+  border-radius: 10px;
+  background: linear-gradient(to right, rgb(140, 166, 219), rgb(185, 147, 214));
+  padding: 0.7rem 0;
+}
+
+.collections-header {
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #00b4ff;
+  padding-left: 1rem;
+}
+
+/* //////////\\\\\\\\\\\\\\\\\\\\ */
+
+.collections-table-of-collections {
+  overflow-y: scroll;
+  height: calc(100vh - 180px);
+  padding-bottom: 1rem;
+}
+
+.collections-table-of-collections::-webkit-scrollbar {
+  width: 10px;
+}
+
+.collections-table-of-collections::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+.collections-table-of-collections::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: grey;
+}
+
+.collections-one-collection-light,
+.collections-one-collection-dark {
+  margin-left: 1rem;
+  margin-right: 7px;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid #00b4ff;
+  border-radius: 5px;
+  display: block;
+  font-size: 20px;
+  color: #000;
+}
+
+.collections-one-collection-light:hover {
+  background: linear-gradient(to right, #00b4ff, #fff);
+}
+
+.collections-one-collection-dark:hover {
+  color: #fff;
+  background: linear-gradient(to right, #00b4ff, #000);
+}

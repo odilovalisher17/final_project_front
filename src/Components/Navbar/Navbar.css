@@ -1,0 +1,127 @@
+@import url("https://fonts.cdnfonts.com/css/hfbestwishes");
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.navbar {
+  position: sticky !important;
+  top: 0;
+  padding: 0 !important;
+  z-index: 50;
+
+  background: #b993d6;
+  background: -webkit-linear-gradient(
+    to right,
+    #8ca6db,
+    #b993d6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgb(140, 166, 219),
+    rgb(185, 147, 214)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.nav-logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.nav-logo div {
+  font-family: "HFBestWishes", sans-serif;
+  font-size: 30px;
+  font-weight: 750;
+}
+
+.nav-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+
+.mode-changer {
+  background: transparent;
+}
+
+.mode-changer-btn {
+  border: none;
+  width: 30px;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+}
+
+.nav-logged-user {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-logged-user:hover > .nav-toggle {
+  display: block;
+}
+
+.nav-toggle:hover {
+  display: block;
+}
+
+.nav-toggle {
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  background-color: #8ca6db;
+  border-radius: 10px;
+  display: none;
+}
+
+.nav-toggle ul li {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+.nav-toggle ul li:last-child {
+  background-color: rgb(253, 101, 101);
+  border-radius: 0 0 10px 10px;
+}
+
+@keyframes nightModeAnimation {
+  from {
+    transform: scale(1);
+    color: black;
+    background-color: black;
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(100);
+    color: black;
+    background-color: black;
+    border-radius: 50%;
+  }
+}
+
+@keyframes lightModeAnimation {
+  from {
+    transform: scale(1);
+    color: whitesmoke;
+    background-color: whitesmoke;
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(100);
+    color: whitesmoke;
+    background-color: whitesmoke;
+    border-radius: 50%;
+  }
+}

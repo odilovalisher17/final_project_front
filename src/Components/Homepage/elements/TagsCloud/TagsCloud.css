@@ -1,0 +1,43 @@
+.tags-cloud {
+  height: calc(100vh - 100px);
+  background: linear-gradient(to right, rgb(140, 166, 219), rgb(185, 147, 214));
+  margin-top: 0.7rem;
+  border-radius: 10px;
+  padding-top: 0.7rem;
+}
+
+.tags-cloud-header {
+  padding-left: 1rem;
+}
+
+.tags-cloud-table {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 140px);
+}
+
+.tags-cloud-table::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tags-cloud-table::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+.tags-cloud-table::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: grey;
+}
+
+.tag-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: block;
+  color: rgb(31, 224, 31);
+  font-size: 20px;
+  font-weight: 750;
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  text-align: start;
+}

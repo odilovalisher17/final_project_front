@@ -1,0 +1,29 @@
+.item-page-tags {
+  color: greenyellow;
+  font-size: 16px;
+  font-weight: 800;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.item-page-tags .row {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item-page-tags button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.item-page-tags-tag {
+  display: flex;
+  align-items: center;
+}
+
+.item-page-tags-tag button {
+  padding: 7px 10px !important;
+  margin-left: 5px;
+}
