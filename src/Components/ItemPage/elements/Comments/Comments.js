@@ -9,20 +9,23 @@ const Comments = ({ comment, setComment, id, item }) => {
   const handleAddComment = async () => {
     if (loggedUser && comment.trim().length > 0) {
       try {
-        await axios.put(`http://localhost:8080/api/v1/items/item/${id}`, {
-          comments: [
-            ...item.comments,
-            {
-              text: comment.trim(),
-              published_time: Date.now(),
-              user: {
-                firstName: loggedUser.firstName,
-                lastName: loggedUser.lastName,
-                id: loggedUser._id,
+        await axios.put(
+          `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`,
+          {
+            comments: [
+              ...item.comments,
+              {
+                text: comment.trim(),
+                published_time: Date.now(),
+                user: {
+                  firstName: loggedUser.firstName,
+                  lastName: loggedUser.lastName,
+                  id: loggedUser._id,
+                },
               },
-            },
-          ],
-        });
+            ],
+          }
+        );
       } catch (error) {
         console.log(error);
       }

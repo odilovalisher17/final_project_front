@@ -12,7 +12,7 @@ const TagsCloud = () => {
     const getTags = async () => {
       try {
         const data = await axios.get(
-          "http://localhost:8080/api/v1/items/getAllTags"
+          "https://final-project-yb3m.onrender.com/api/v1/items/getAllTags"
         );
 
         dispatch(

@@ -22,7 +22,7 @@ const CollectionPage = () => {
     const getCollection = async () => {
       try {
         const getData = await axios.get(
-          `http://localhost:8080/api/v1/collections/collection/${id}`
+          `https://final-project-yb3m.onrender.com/api/v1/collections/collection/${id}`
         );
 
         setCollection(getData.data.collectionn);
@@ -34,7 +34,7 @@ const CollectionPage = () => {
     const getItems = async () => {
       try {
         const items = await axios.get(
-          `http://localhost:8080/api/v1/items/getAllItems?collection_id=${id}`
+          `https://final-project-yb3m.onrender.com/api/v1/items/getAllItems?collection_id=${id}`
         );
 
         setAllItemsOfCol(items.data.items);
@@ -77,7 +77,7 @@ const CollectionPage = () => {
       const newCollection = removeEmptyStrings(collection);
 
       await axios.put(
-        `http://localhost:8080/api/v1/collections/collection/${id}`,
+        `https://final-project-yb3m.onrender.com/api/v1/collections/collection/${id}`,
         newCollection
       );
     } catch (error) {
@@ -89,7 +89,7 @@ const CollectionPage = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:8080/api/v1/collections/collection/${id}`
+        `https://final-project-yb3m.onrender.com/api/v1/collections/collection/${id}`
       );
     } catch (error) {
       console.log(error);

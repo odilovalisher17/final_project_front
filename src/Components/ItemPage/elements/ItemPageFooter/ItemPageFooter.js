@@ -19,9 +19,12 @@ const ItemPageFooter = ({ isLike, setIsLike, item, id }) => {
           newLikes.push(loggedUser._id);
         }
 
-        await axios.put(`http://localhost:8080/api/v1/items/item/${id}`, {
-          likes: newLikes,
-        });
+        await axios.put(
+          `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`,
+          {
+            likes: newLikes,
+          }
+        );
         setIsLike((e) => !e);
       } catch (error) {
         console.log(error);

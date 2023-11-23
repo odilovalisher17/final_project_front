@@ -25,7 +25,7 @@ const ItemPage = () => {
     const getItem = async () => {
       try {
         const data = await axios.get(
-          `http://localhost:8080/api/v1/items/item/${id}`
+          `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`
         );
         //console.log(data);
         setItem(data.data.Item);
@@ -51,17 +51,20 @@ const ItemPage = () => {
   const handleSubmitEdit = async () => {
     try {
       setEditMode(false);
-      await axios.put(`http://localhost:8080/api/v1/items/item/${id}`, {
-        name: newItem.name.trim(),
-        tags: [
-          ...newItem.tags.map((e) => e.trim()).filter((el) => el.length > 0),
-        ],
-        properties: JSON.parse(
-          JSON.stringify(newItem.properties, (key, value) =>
-            typeof value === "string" ? value.trim() : value
-          )
-        ),
-      });
+      await axios.put(
+        `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`,
+        {
+          name: newItem.name.trim(),
+          tags: [
+            ...newItem.tags.map((e) => e.trim()).filter((el) => el.length > 0),
+          ],
+          properties: JSON.parse(
+            JSON.stringify(newItem.properties, (key, value) =>
+              typeof value === "string" ? value.trim() : value
+            )
+          ),
+        }
+      );
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +72,9 @@ const ItemPage = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/items/item/${id}`);
+      await axios.delete(
+        `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`
+      );
     } catch (error) {
       console.log(error);
     }

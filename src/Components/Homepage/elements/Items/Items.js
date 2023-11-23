@@ -13,7 +13,7 @@ const Items = () => {
     const getData = async () => {
       try {
         const data = await axios.get(
-          "http://localhost:8080/api/v1/items/getAllItems"
+          "https://final-project-yb3m.onrender.com/api/v1/items/getAllItems"
         );
 
         dispatch(updateItems(data.data.items));

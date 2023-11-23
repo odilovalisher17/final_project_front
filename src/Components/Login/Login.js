@@ -17,7 +17,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const user = await axios.get(
-        `http://localhost:8080/api/v1/users/user?email=${email}&password=${password}`
+        `https://final-project-yb3m.onrender.com/api/v1/users/user?email=${email}&password=${password}`
       );
       //console.log(user);
       dispatch(addLoggedUser(user.data.user));

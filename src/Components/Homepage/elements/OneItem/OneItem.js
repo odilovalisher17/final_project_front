@@ -30,9 +30,12 @@ const OneItem = ({ item }) => {
         }
         console.log(newLikes);
 
-        await axios.put(`http://localhost:8080/api/v1/items/item/${item.id}`, {
-          likes: newLikes,
-        });
+        await axios.put(
+          `https://final-project-yb3m.onrender.com/api/v1/items/item/${item.id}`,
+          {
+            likes: newLikes,
+          }
+        );
       } catch (error) {
         console.log(error);
       }

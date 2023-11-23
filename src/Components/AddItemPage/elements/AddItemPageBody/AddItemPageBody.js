@@ -14,7 +14,7 @@ const AddItemPageBody = ({ id }) => {
     const getProp = async () => {
       try {
         const data = await axios.get(
-          `http://localhost:8080/api/v1/collections/collection/${id}`
+          `https://final-project-yb3m.onrender.com/api/v1/collections/collection/${id}`
         );
         setCollectionOfITem(data.data.collectionn);
 
@@ -75,6 +75,12 @@ const AddItemPageBody = ({ id }) => {
             <div className="add-item-page-body-collection">
               <span>Collection: </span>
               <span>{collectionOfItem.name}</span>
+            </div>
+
+            <div className="add-item-page-body-properties">
+              {properties.map((el, ind) => (
+                <div key={ind}>{el}</div>
+              ))}
             </div>
           </div>
         </Col>

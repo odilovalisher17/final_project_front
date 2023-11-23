@@ -11,7 +11,9 @@ const OneCollection = ({ item, collection, editMode }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/items/item/${item._id}`);
+      await axios.delete(
+        `https://final-project-yb3m.onrender.com/api/v1/items/item/${item._id}`
+      );
     } catch (error) {
       console.log(error);
     }
