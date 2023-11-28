@@ -2,8 +2,11 @@ import React from "react";
 import "./CollectionPageProperties.css";
 import Properties from "../Properties/Properties";
 import { Table } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const CollectionPageProperties = ({ collection, setCollection, editMode }) => {
+  const mode = useSelector((state) => state.modeChanger);
+
   return (
     <div className="collection-page-properties">
       <div className="collection-page-properties-header">
@@ -11,7 +14,11 @@ const CollectionPageProperties = ({ collection, setCollection, editMode }) => {
       </div>
 
       <div className="collection-page-properties-table">
-        <Table striped bordered hover variant="dark">
+        <Table
+          striped
+          bordered
+          hover
+          variant={mode === "dark" ? "dark" : "light"}>
           <thead>
             <tr>
               <th>#</th>

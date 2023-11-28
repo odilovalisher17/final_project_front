@@ -3,13 +3,15 @@ import "./Login.css";
 import { Container, Form, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { addLoggedUser } from "../../Store/Reducers/LoggedUserReducer";
+import { useAuth } from "../../helpers/AuthContext";
 
 const Login = () => {
   const mode = useSelector((state) => state.modeChanger);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState(undefined);
@@ -21,6 +23,7 @@ const Login = () => {
       );
       //console.log(user);
       dispatch(addLoggedUser(user.data.user));
+      login();
       setErrMessage(undefined);
 
       const expiryDate = new Date(
@@ -50,7 +53,12 @@ const Login = () => {
           alignItems: "center",
           justifyContent: "center",
         }}>
-        <div className="login-form">
+        <div
+          className={
+            mode === "dark"
+              ? "login-form bg-dark-card"
+              : "login-form bg-light-card"
+          }>
           <div className="login-header">
             <h3>Login</h3>
           </div>
@@ -81,6 +89,11 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>Don't have an account? </Form.Label>{" "}
+                <NavLink to={"/reg"}>Register here!</NavLink>
               </Form.Group>
 
               <Button

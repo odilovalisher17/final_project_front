@@ -3,7 +3,7 @@ import "./ItemPageFooter.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faEye, faComment } from "@fortawesome/free-regular-svg-icons";
+import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 const ItemPageFooter = ({ isLike, setIsLike, item, id }) => {
@@ -47,19 +47,6 @@ const ItemPageFooter = ({ isLike, setIsLike, item, id }) => {
         </div>
 
         <span>{item.likes.length}</span>
-      </div>
-
-      <div className="one-item-footer-views">
-        <div className="views-hover-effect">
-          <FontAwesomeIcon
-            icon={faEye}
-            color="#000"
-            fontSize="25px"
-            fill="white"
-          />
-        </div>
-
-        <span>789</span>
       </div>
 
       <div className="one-item-footer-comments">

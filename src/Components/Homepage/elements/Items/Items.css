@@ -18,9 +18,5 @@
 
 .items::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(
-    to bottom,
-    rgb(140, 166, 219),
-    rgb(185, 147, 214)
-  );
+  background: grey;
 }

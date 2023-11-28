@@ -6,10 +6,16 @@ import { useSelector } from "react-redux";
 
 const CollectionPageItems = ({ allItemsOfCol, id, editMode, collection }) => {
   const loggedUser = useSelector((state) => state.loggedUser);
+  const mode = useSelector((state) => state.modeChanger);
 
   if (allItemsOfCol) {
     return (
-      <div className="collection-page-items">
+      <div
+        className={
+          mode === "dark"
+            ? "collection-page-items bg-dark-card"
+            : "collection-page-items bg-light-card"
+        }>
         <div className="collection-page-items-header">Items</div>
 
         <div className="collection-page-items-table">
@@ -17,7 +23,7 @@ const CollectionPageItems = ({ allItemsOfCol, id, editMode, collection }) => {
             loggedUser.role === "admin") &&
             !editMode && (
               <div className="collection-page-items-table-add-item">
-                <NavLink to={`/add-item/${id}`}>
+                <NavLink to={`/add-item/collection/${id}`}>
                   <button>Add an item</button>
                 </NavLink>
               </div>

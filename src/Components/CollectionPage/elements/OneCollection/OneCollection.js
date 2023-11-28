@@ -32,7 +32,7 @@ const OneCollection = ({ item, collection, editMode }) => {
 
           {Object.entries(item.properties).map(([key, val]) => (
             <div key={key}>
-              {key} : {val}
+              {key} : {typeof val === "boolean" ? (val ? "Yes" : "No") : val}
             </div>
           ))}
 

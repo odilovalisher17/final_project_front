@@ -5,7 +5,6 @@ import {
   faBox,
   faPenNib,
   faTags,
-  faEye,
   faComment,
   faHeart as faSolidHeart,
 } from "@fortawesome/free-solid-svg-icons";
@@ -16,8 +15,9 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const OneItem = ({ item }) => {
+const OneItem = ({ item, getData }) => {
   const loggedUser = useSelector((state) => state.loggedUser);
+  const mode = useSelector((state) => state.modeChanger);
 
   const handleLikes = async () => {
     if (loggedUser) {
@@ -28,7 +28,6 @@ const OneItem = ({ item }) => {
         } else {
           newLikes.push(loggedUser._id);
         }
-        console.log(newLikes);
 
         await axios.put(
           `https://final-project-yb3m.onrender.com/api/v1/items/item/${item.id}`,
@@ -36,6 +35,8 @@ const OneItem = ({ item }) => {
             likes: newLikes,
           }
         );
+
+        getData();
       } catch (error) {
         console.log(error);
       }
@@ -44,8 +45,24 @@ const OneItem = ({ item }) => {
     }
   };
 
+  const changeDateFormat = (inputDateString) => {
+    var inputDate = new Date(inputDateString);
+
+    var hours = ("0" + inputDate.getHours()).slice(-2);
+    var minutes = ("0" + inputDate.getMinutes()).slice(-2);
+    var month = inputDate.toLocaleString("en-US", { month: "short" });
+    var day = inputDate.getDate();
+
+    var outputDateString = `${hours}:${minutes} ${month} ${day}`;
+
+    return outputDateString;
+  };
+
   return (
-    <div className="one-item">
+    <div
+      className={
+        mode === "dark" ? "one-item bg-dark-card" : "one-item bg-light-card"
+      }>
       <Row className="one-item-top">
         <Col sm={5} md={3} lg={3} className="one-item-image">
           {item.image ? (
@@ -66,7 +83,7 @@ const OneItem = ({ item }) => {
             </h4>
 
             <div className="one-item-published-time">
-              <small>{item.time}</small>
+              <small>{changeDateFormat(item.time)}</small>
             </div>
           </div>
 
@@ -116,19 +133,6 @@ const OneItem = ({ item }) => {
           </div>
 
           <span>{item.likes.length}</span>
-        </div>
-
-        <div className="one-item-footer-views">
-          <div className="views-hover-effect">
-            <FontAwesomeIcon
-              icon={faEye}
-              color="#000"
-              fontSize="25px"
-              fill="white"
-            />
-          </div>
-
-          <span>789</span>
         </div>
 
         <div className="one-item-footer-comments">

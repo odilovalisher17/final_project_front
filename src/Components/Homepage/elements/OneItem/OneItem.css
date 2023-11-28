@@ -2,17 +2,6 @@
   border-radius: 10px;
   margin-bottom: 0.7rem;
   padding: 0.5rem 0.7rem;
-  background: #b993d6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #8ca6db,
-    #b993d6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    rgb(140, 166, 219),
-    rgb(185, 147, 214)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .one-item-top {

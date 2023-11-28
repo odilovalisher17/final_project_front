@@ -1,0 +1,18 @@
+.add-collection-prop-header {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.add-collection-prop-table button {
+  width: 100%;
+  padding: 3px 0;
+  border-radius: 5px;
+}
+
+.add-collection-prop-table input,
+.add-collection-prop-table textarea {
+  width: 100%;
+  padding: 2px 5px;
+  border-radius: 5px;
+}

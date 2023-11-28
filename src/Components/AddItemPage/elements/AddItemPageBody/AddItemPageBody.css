@@ -9,6 +9,23 @@
   margin-right: 10px;
 }
 
-.add-item-page-body input {
+.add-item-page-body input,
+.add-item-page-body textarea {
   border-radius: 5px;
+  padding: 3px 10px;
+  width: 100%;
+}
+
+.add-item-page-body input[type="checkbox"] {
+  width: auto !important;
+}
+
+.add-item-page-body-name,
+.add-item-page-body-author,
+.add-item-page-body-collection {
+  margin-bottom: 5px;
+}
+
+.add-item-page-body-name input {
+  margin-bottom: 0 !important;
 }

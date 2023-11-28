@@ -1,0 +1,99 @@
+.admin-panel {
+  min-height: 90vh;
+  padding-top: 10px;
+}
+
+.admin-panel-card {
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+.admin-panel-header {
+  font-size: 22px;
+  font-weight: 550;
+  text-align: center;
+  border-bottom: 1px grey solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.admin-panel-search {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px grey solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-panel-search input {
+  width: 89%;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.admin-panel-search button {
+  width: 9%;
+  border-radius: 5px;
+}
+
+.admin-panel-table {
+  max-height: 63vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+.admin-panel-table::-webkit-scrollbar {
+  width: 10px;
+}
+
+.admin-panel-table::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgba(60, 60, 60, 0.1);
+}
+
+.admin-panel-table::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: grey;
+}
+
+.admin-panel-one-user {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px grey solid;
+}
+
+.admin-panel-one-user-btns button {
+  width: 100%;
+  border-radius: 5px;
+  padding: 3px 0;
+  margin-bottom: 5px;
+}
+
+.one-user-name,
+.one-user-email,
+.one-user-status,
+.one-user-role {
+  display: flex;
+  font-size: 20px;
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
+.admin-panel-pagination {
+  border-top: 1px grey solid;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-panel-one-page {
+  padding: 5px 10px;
+  background: whitesmoke;
+  border: 1px solid grey;
+  width: 50px;
+  text-align: center;
+}
+
+.admin-panel-current-page {
+  background: #00b4ff !important;
+}

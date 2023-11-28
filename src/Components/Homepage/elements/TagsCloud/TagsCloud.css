@@ -1,6 +1,5 @@
 .tags-cloud {
   height: calc(100vh - 100px);
-  background: linear-gradient(to right, rgb(140, 166, 219), rgb(185, 147, 214));
   margin-top: 0.7rem;
   border-radius: 10px;
   padding-top: 0.7rem;

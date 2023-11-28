@@ -1,0 +1,15 @@
+.add-collection-body-name,
+.add-collection-body-author,
+.add-collection-body-topic,
+.add-collection-body-description {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 450;
+}
+
+.add-collection-body input,
+.add-collection-body textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 2px 10px;
+}

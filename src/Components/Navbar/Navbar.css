@@ -15,12 +15,6 @@ ul {
   padding: 0 !important;
   z-index: 50;
 
-  background: #b993d6;
-  background: -webkit-linear-gradient(
-    to right,
-    #8ca6db,
-    #b993d6
-  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     rgb(140, 166, 219),
@@ -49,7 +43,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 150px;
+  min-width: 200px;
 }
 
 .mode-changer {
@@ -69,6 +63,10 @@ ul {
   cursor: pointer;
 }
 
+.nav-logged-user span {
+  padding-right: 10px;
+}
+
 .nav-logged-user:hover > .nav-toggle {
   display: block;
 }
@@ -86,12 +84,20 @@ ul {
   display: none;
 }
 
-.nav-toggle ul li {
+.nav-toggle a {
+  color: #fff;
+}
+
+.nav-toggle div:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-toggle div {
   padding: 0.5rem 2rem;
   cursor: pointer;
 }
 
-.nav-toggle ul li:last-child {
+.nav-toggle-logout {
   background-color: rgb(253, 101, 101);
   border-radius: 0 0 10px 10px;
 }

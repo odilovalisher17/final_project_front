@@ -4,11 +4,11 @@ import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const ItemPageTags = ({ newItem, setNewItem, editMode }) => {
+const ItemPageTags = ({ item, setItem, editMode }) => {
   return (
     <div className="item-page-tags">
       <Row>
-        {newItem.tags.map((el, index) => (
+        {item.tags.map((el, index) => (
           <Col xs={6} s={6} md={4} lg={3} xl={3} key={index}>
             {editMode ? (
               <div className="item-page-tags-tag">
@@ -16,12 +16,12 @@ const ItemPageTags = ({ newItem, setNewItem, editMode }) => {
                 <input
                   style={{ width: "100%" }}
                   type="text"
-                  value={newItem.tags[index]}
+                  value={item.tags[index]}
                   onChange={(e) =>
-                    setNewItem({
-                      ...newItem,
+                    setItem({
+                      ...item,
                       tags: [
-                        ...newItem.tags.map((t, ind) => {
+                        ...item.tags.map((t, ind) => {
                           if (ind === index) {
                             return e.target.value;
                           } else {
@@ -34,10 +34,10 @@ const ItemPageTags = ({ newItem, setNewItem, editMode }) => {
                 />
                 <button
                   onClick={() =>
-                    setNewItem({
-                      ...newItem,
+                    setItem({
+                      ...item,
                       tags: [
-                        ...newItem.tags.filter(
+                        ...item.tags.filter(
                           (delItem, delInd) => delInd !== index
                         ),
                       ],
@@ -56,9 +56,9 @@ const ItemPageTags = ({ newItem, setNewItem, editMode }) => {
           <Col xs={6} s={6} md={4} lg={3} xl={3}>
             <button
               onClick={() =>
-                setNewItem({
-                  ...newItem,
-                  tags: [...newItem.tags, ""],
+                setItem({
+                  ...item,
+                  tags: [...item.tags, ""],
                 })
               }>
               Add Tag

@@ -1,0 +1,13 @@
+.register-page {
+  height: calc(100vh - 70px);
+  padding-top: 10px;
+}
+
+.register-header {
+  text-align: center;
+}
+
+.register-body button {
+  width: 100%;
+  background: #00b4ff;
+}

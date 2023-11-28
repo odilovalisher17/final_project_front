@@ -9,6 +9,7 @@ import ItemPageBody from "./elements/ItemPageBody/ItemPageBody";
 import ItemPageTags from "./elements/ItemPageTags/ItemPageTags";
 import ItemPageFooter from "./elements/ItemPageFooter/ItemPageFooter";
 import ItemPageHeader from "./elements/ItemPageHeader/ItemPageHeader";
+import Loading from "../Loading/Loading";
 
 const ItemPage = () => {
   const { id } = useParams();
@@ -16,7 +17,6 @@ const ItemPage = () => {
   const [isLike, setIsLike] = useState();
   const [comment, setComment] = useState("");
   const [editMode, setEditMode] = useState(false);
-  const [newItem, setNewItem] = useState({});
   const loggedUser = useSelector((state) => state.loggedUser);
   const darkMode = useSelector((state) => state.modeChanger);
 
@@ -27,14 +27,9 @@ const ItemPage = () => {
         const data = await axios.get(
           `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`
         );
-        //console.log(data);
+
         setItem(data.data.Item);
         setIsLike(data.data.Item.likes.includes(loggedUser._id));
-        setNewItem({
-          name: data.data.Item.name,
-          properties: data.data.Item.properties,
-          tags: data.data.Item.tags,
-        });
       } catch (error) {
         console.log(error);
       }
@@ -54,12 +49,12 @@ const ItemPage = () => {
       await axios.put(
         `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`,
         {
-          name: newItem.name.trim(),
+          name: item.name.trim(),
           tags: [
-            ...newItem.tags.map((e) => e.trim()).filter((el) => el.length > 0),
+            ...item.tags.map((e) => e.trim()).filter((el) => el.length > 0),
           ],
           properties: JSON.parse(
-            JSON.stringify(newItem.properties, (key, value) =>
+            JSON.stringify(item.properties, (key, value) =>
               typeof value === "string" ? value.trim() : value
             )
           ),
@@ -85,27 +80,22 @@ const ItemPage = () => {
       <div className={darkMode === "dark" ? "bg-dark-mode" : "bg-light-mode"}>
         <Container>
           <div className="item-page">
-            <div className="item-page-card">
+            <div
+              className={
+                darkMode === "dark"
+                  ? "item-page-card bg-dark-card"
+                  : "item-page-card bg-light-card"
+              }>
               <ItemPageHeader
                 editMode={editMode}
                 setEditMode={setEditMode}
-                newItem={newItem}
-                setNewItem={setNewItem}
                 item={item}
+                setItem={setItem}
               />
 
-              <ItemPageBody
-                item={item}
-                editMode={editMode}
-                newItem={newItem}
-                setNewItem={setNewItem}
-              />
+              <ItemPageBody item={item} editMode={editMode} setItem={setItem} />
 
-              <ItemPageTags
-                newItem={newItem}
-                setNewItem={setNewItem}
-                editMode={editMode}
-              />
+              <ItemPageTags item={item} setItem={setItem} editMode={editMode} />
 
               {!editMode && (
                 <ItemPageFooter
@@ -182,7 +172,26 @@ const ItemPage = () => {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return (
+      <div className={darkMode === "dark" ? "bg-dark-mode" : "bg-light-mode"}>
+        <Container>
+          <div className="item-page">
+            <div
+              className={
+                darkMode === "dark"
+                  ? "item-page-card bg-dark-card"
+                  : "item-page-card bg-light-card"
+              }>
+              <Loading nums={1} height="50px" />
+
+              <div className="item-page-body">
+                <Loading nums={4} height="80px" />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    );
   }
 };
 

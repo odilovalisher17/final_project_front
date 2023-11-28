@@ -5,9 +5,11 @@ import { useSelector } from "react-redux";
 
 const Comments = ({ comment, setComment, id, item }) => {
   const loggedUser = useSelector((state) => state.loggedUser);
+  const mode = useSelector((state) => state.modeChanger);
 
-  const handleAddComment = async () => {
+  const handleAddComment = async (e) => {
     if (loggedUser && comment.trim().length > 0) {
+      e.target.disabled = true;
       try {
         await axios.put(
           `https://final-project-yb3m.onrender.com/api/v1/items/item/${id}`,
@@ -29,6 +31,7 @@ const Comments = ({ comment, setComment, id, item }) => {
       } catch (error) {
         console.log(error);
       }
+      e.target.disabled = false;
     } else {
       alert("You should login to comment");
     }
@@ -54,7 +57,12 @@ const Comments = ({ comment, setComment, id, item }) => {
   };
 
   return (
-    <div className="item-page-comments">
+    <div
+      className={
+        mode === "dark"
+          ? "item-page-comments bg-dark-card"
+          : "item-page-comments bg-light-card"
+      }>
       <div className="itam-page-comments-header">Comments:</div>
 
       <div className="item-page-comments-add-comment">
@@ -67,8 +75,8 @@ const Comments = ({ comment, setComment, id, item }) => {
 
         <div>
           <button
-            onClick={() => {
-              handleAddComment();
+            onClick={(e) => {
+              handleAddComment(e);
               setComment("");
             }}>
             Send comment

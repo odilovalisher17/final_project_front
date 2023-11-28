@@ -8,8 +8,11 @@
 }
 
 .item-page-tags .row {
-  justify-content: space-around;
   align-items: center;
+}
+
+.item-page-tags .row div {
+  text-align: center;
 }
 
 .item-page-tags button {

@@ -8,9 +8,11 @@ import { changeMode } from "../../Store/Reducers/ModeChangerReducer";
 import logo from "./img/logo.png";
 import { NavLink } from "react-router-dom";
 import { removeLoggedUser } from "../../Store/Reducers/LoggedUserReducer";
+import { useAuth } from "../../helpers/AuthContext";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const { logout } = useAuth();
   const mode = useSelector((state) => state.modeChanger);
   const loggedUser = useSelector((state) => state.loggedUser);
 
@@ -60,18 +62,29 @@ const Navbar = () => {
               </div>
 
               <div className="nav-toggle">
-                <ul>
-                  <li>
-                    <NavLink to={"/my-collections"}>My Collections</NavLink>
-                  </li>
-                  <li
-                    onClick={() => {
-                      document.cookie = `authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-                      dispatch(removeLoggedUser());
-                    }}>
-                    Log Out
-                  </li>
-                </ul>
+                <NavLink to={`/user/${loggedUser._id}`}>
+                  <div>My Account</div>
+                </NavLink>
+
+                <NavLink to={`/my-collections/user/${loggedUser._id}`}>
+                  <div>My Collections</div>
+                </NavLink>
+
+                {loggedUser.role === "admin" && (
+                  <NavLink to={"/users"}>
+                    <div>All Users</div>
+                  </NavLink>
+                )}
+
+                <div
+                  className="nav-toggle-logout"
+                  onClick={() => {
+                    document.cookie = `authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                    dispatch(removeLoggedUser());
+                    logout();
+                  }}>
+                  Log Out
+                </div>
               </div>
             </div>
           ) : (

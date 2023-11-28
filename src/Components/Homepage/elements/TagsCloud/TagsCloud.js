@@ -3,10 +3,12 @@ import "./TagsCloud.css";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { updateTags } from "../../../../Store/Reducers/TagsReducer";
+import Loading from "../../../Loading/Loading";
 
 const TagsCloud = () => {
   const dispatch = useDispatch();
   const tags = useSelector((state) => state.tags);
+  const mode = useSelector((state) => state.modeChanger);
 
   useEffect(() => {
     const getTags = async () => {
@@ -35,7 +37,12 @@ const TagsCloud = () => {
 
   if (tags.length > 0) {
     return (
-      <div className="tags-cloud">
+      <div
+        className={
+          mode === "dark"
+            ? "tags-cloud bg-dark-card"
+            : "tags-cloud bg-light-card"
+        }>
         <div className="tags-cloud-header">
           <h5>All Tags</h5>
         </div>
@@ -50,7 +57,7 @@ const TagsCloud = () => {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <Loading nums={10} height={"50px"} />;
   }
 };
 

@@ -1,0 +1,17 @@
+.add-item-page-body-properties .row {
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.add-item-page-body-properties input,
+.add-item-page-body-properties textarea {
+  border-radius: 5px;
+  padding: 3px 10px;
+  width: 100%;
+}
+
+.add-item-page-body-properties span {
+  font-size: 20px;
+  font-weight: 450;
+  margin-right: 10px;
+}

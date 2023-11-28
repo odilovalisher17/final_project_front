@@ -14,3 +14,17 @@
 .item-page-body-properties {
   font-size: 22px;
 }
+
+.item-page-body-one-prop {
+  margin-bottom: 5px;
+}
+
+.item-page-body-one-prop input,
+.item-page-body-one-prop textarea {
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 19px;
+  border-radius: 5px;
+  background-color: #8ca6db;
+  border: 1px grey solid;
+}

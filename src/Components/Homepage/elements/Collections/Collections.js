@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { updateCollections } from "../../../../Store/Reducers/CollectionReducer";
+import Loading from "../../../Loading/Loading";
 
 const Collections = () => {
   const mode = useSelector((state) => state.modeChanger);
@@ -30,7 +31,12 @@ const Collections = () => {
 
   if (collections.length > 0) {
     return (
-      <div className="collections">
+      <div
+        className={
+          mode === "dark"
+            ? "collections bg-dark-card"
+            : "collections bg-light-card"
+        }>
         <div className="collections-header">
           <h5>Most Popular Collections</h5>
         </div>
@@ -52,7 +58,11 @@ const Collections = () => {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading nums={10} height={"50px"} />
+      </div>
+    );
   }
 };
 

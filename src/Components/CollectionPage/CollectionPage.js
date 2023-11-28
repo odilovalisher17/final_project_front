@@ -10,10 +10,12 @@ import CollectionPageHeader from "./elements/CollectionPageHeader/CollectionPage
 import CollectionPageBody from "./elements/CollectionPageBody/CollectionPageBody";
 import CollectionPageProperties from "./elements/CollectionPageProperties/CollectionPageProperties";
 import CollectionPageItems from "./elements/CollectionPageItems/CollectionPageItems";
+import Loading from "../Loading/Loading";
 
 const CollectionPage = () => {
   const { id } = useParams();
   const loggedUser = useSelector((state) => state.loggedUser);
+  const mode = useSelector((state) => state.modeChanger);
   const [collection, setCollection] = useState();
   const [editMode, setEditMode] = useState(false);
   const [allItemsOfCol, setAllItemsOfCol] = useState();
@@ -98,9 +100,19 @@ const CollectionPage = () => {
 
   if (collection && allItemsOfCol) {
     return (
-      <Container>
-        <div className="collection-page">
-          <div className="collection-page-card">
+      <div
+        className={
+          mode === "dark"
+            ? "collection-page bg-dark-mode"
+            : "collection-page bg-light-mode"
+        }>
+        <Container>
+          <div
+            className={
+              mode === "dark"
+                ? "collection-page-card bg-dark-card"
+                : "collection-page-card bg-light-card"
+            }>
             <CollectionPageHeader
               editMode={editMode}
               setEditMode={setEditMode}
@@ -176,11 +188,30 @@ const CollectionPage = () => {
               collection={collection}
             />
           )}
-        </div>
-      </Container>
+        </Container>
+      </div>
     );
   } else {
-    return <div>...Loading</div>;
+    return (
+      <div
+        className={
+          mode === "dark"
+            ? "collection-page bg-dark-mode"
+            : "collection-page bg-light-mode"
+        }>
+        <Container>
+          <div
+            className={
+              mode === "dark"
+                ? "collection-page-card bg-dark-card"
+                : "collection-page-card bg-light-card"
+            }>
+            <Loading nums={1} height="50px" />
+            <Loading nums={3} height="100px" />
+          </div>
+        </Container>
+      </div>
+    );
   }
 };
 
